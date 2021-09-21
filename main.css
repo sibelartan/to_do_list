@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:wght@300;400;700&display=swap');
+
+/* Base */
+:root {
+    --primary-color: #333;
+    --light-color: #f8f8ff;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Quicksand';
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Quicksand';
+}
+
+body {
+    background-color: #e3e4e6;
+    color: var(--primary-color);
+    font-family: 'Quicksand';
+    line-height: 1.6;
+    padding: 32px;
+    height: 100vh;
+}
+
+/* App container grid */
+.app {
+    display: grid;
+    grid-template-columns: 225px 1fr;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    font-family: 'Quicksand';
+}
+
+/* Utilities */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    display: inline-block;
+    padding: 12.50px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Quicksand';
+}
+
+.btn:hover {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+/* Header */
+.header {
+    color: var(--primary-color);
+    padding: 1.6rem;
+    position: sticky;
+    top: 0;
+    background-color: #f7d0cb;
+}
+
+#clock {
+    color: #313131;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+    background-color: #f7d0cb;
+    font-family: 'Quicksand';
+}
+
+.currently-viewing {
+    font-size: 1.5rem;
+    color:#313131;
+}
+
+.currently-viewing > span {
+    font-weight: bold;
+    color: #e57373;
+    cursor: pointer;
+}
+
+/* Sidebar Form */
+
+.sidebar-form .form-control {
+    margin: 10px 0;
+    background-color: #f6d9d5;
+}
+
+.sidebar-form input {
+    border: 0;
+    width: 100%;
+    padding: 3px 0;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+.sidebar-form input:focus {
+    outline: none;
+}
+
+.sidebar-form button {
+    width: 100%;
+}
+
+/* Sidebar List */
+.sidebar-list {
+    padding: 1.6rem;
+    border:3px solid #f7d0cb;
+    background-color: #f6d9d5;
+    font-weight:bold;
+}
+
+.sidebar-item {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 16px 0;
+    cursor: pointer;
+    font-size: 1.75rem;
+}
+
+.sidebar-item.active {
+    font-weight: bold;
+}
+
+.sidebar-item:first-child {
+    margin-top: 0;
+}
+
+.sidebar-color {
+    border: none;
+    width: 25px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/* Main */
+.main {
+    background-color: #f9fafc;
+    overflow-y: scroll;
+}
+
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.main .header {
+    background: #f9fafc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+/* Create and Edit Form */
+.create-todo-form input, .edit-todo-form input,
+.create-todo-form select, .edit-todo-form select {
+    border: 0;
+    width: 100%;
+    padding: 3px 0;
+    font-size: 16px;
+    font-family: 'Quicksand';
+    background-color: transparent;
+}
+
+.create-todo-form input:focus, .edit-todo-form input:focus,
+.create-todo-form select:focus, .edit-todo-form select:focus {
+    outline: none;
+}
+
+.create-todo-form, .edit-todo-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex: .8;
+}
+
+.create-todo-form input, .edit-todo-form input {
+    border-bottom: 1px solid #b4b3cb;
+    width: 350px;
+}
+
+.edit-todo-form {
+    display: none;
+}
+
+/* Cards */
+.todos-container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr); 
+    grid-auto-rows: max-content;
+    gap: 20px;
+    padding: 1.6rem;
+}
+
+.todo {
+    background-color: #fff;
+    color: var(--primary-color);
+    border-top: 6px solid;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.todo-tag {
+    font-size: 1.6rem;
+    padding: .5rem 2.5rem;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    font-weight:bold;
+}
+
+.todo-description {
+    font-size: 1.6rem;
+    margin: 1rem 0 2rem 0;
+    word-break: break-all;
+}
+
+.todo-actions {
+    margin-top: auto;
+}
+
+.todo-actions i {
+    font-size: 1.6rem;
+    margin-right: 1.6rem;
+    opacity: 0.25;
+    cursor: pointer;
+}
